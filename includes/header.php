@@ -1,4 +1,8 @@
 <?php
+// Start output buffering to prevent issues with sending headers
+ob_start();
+
+// Start the session if not already started
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -17,7 +21,6 @@ if (session_status() == PHP_SESSION_NONE) {
         <nav>
             <ul class="nav-links">
                 <li><a href="/Multimart/index.php">Home</a></li>
-              
                 <li><a href="/Multimart/customer/login.php">Customer Login</a></li>
                 <!-- <li><a href="/Multimart/customer/register.php">Customer Register</a></li> -->
                 <li><a href="/Multimart/admin/admin_login.php">Admin Login</a></li>
@@ -26,3 +29,12 @@ if (session_status() == PHP_SESSION_NONE) {
         </nav>
     </header>
     <main>
+        <!-- Your main content here -->
+    </main>
+
+<?php
+// End output buffering and flush any remaining output
+ob_end_flush();
+?>
+</body>
+</html>
